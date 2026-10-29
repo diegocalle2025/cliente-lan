@@ -1,6 +1,9 @@
 FROM python:alpine
+
 WORKDIR /app
-COPY entrypoint.sh /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh
+
+COPY app.py /app/app.py
+
 EXPOSE 8080
-CMD ["/bin/sh", "/app/entrypoint.sh"]
+
+CMD ["python", "app.py"]
